@@ -1,7 +1,7 @@
 import { describe, expect, beforeEach, afterEach, test, jest } from "bun:test";
 import fs from "node:fs/promises";
 import { LockManager } from "../src/lock";
-import { sortKeys } from "../utils/sortKeys";
+import { sortKeys } from "../utils/helpers";
 import pkg from "./test-package.json";
 
 import yaml from "yaml";
@@ -142,7 +142,6 @@ describe("LockManager", () => {
       expect((err as NodeJS.ErrnoException).code).toEqual("ENOENT");
     }
   });
-
   test("should throw error if lock file not found", async () => {
     (fs.exists as jest.Mock).mockResolvedValue(false);
     try {

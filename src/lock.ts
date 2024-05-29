@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import yaml from "yaml";
-import { sortKeys } from "../utils/sortKeys";
+import { sortKeys } from "../utils/helpers";
 
 import type { Version } from "../types/registry";
 

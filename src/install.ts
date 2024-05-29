@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import tar from "tar";
 import { request } from "undici";
 
-export default async function(pkgName: string, url: string, location = "") {
+export default async function (pkgName: string, url: string, location = "") {
   const installPath = `${process.cwd()}${location}/node_modules/${pkgName} `;
 
   await fs.mkdir(installPath, {
